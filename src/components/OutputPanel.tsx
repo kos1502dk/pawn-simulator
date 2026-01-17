@@ -6,7 +6,10 @@ const OutputPanel = () => {
   const { outputs, clearOutputs } = useOutputsStore();
 
   return (
-    <div className="w-full mt-4 p-4 border border-gray-600 rounded-lg bg-gray-800 shadow-md text-white">
+    <div
+      data-testid="output-panel"
+      className="w-full mt-4 p-4 border border-gray-600 rounded-lg bg-gray-800 shadow-md text-white"
+    >
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-lg font-medium">Output</h2>
         {outputs.length > 0 && (

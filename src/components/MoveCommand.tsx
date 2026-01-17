@@ -27,6 +27,7 @@ const MoveCommand = () => {
         <div className="flex gap-3 items-end">
           <div className="flex-1">
             <input
+              data-testid="steps-input"
               type="number"
               min="1"
               max="2"

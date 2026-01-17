@@ -40,6 +40,7 @@ const PlaceCommand = () => {
           <div>
             <label className="block text-xs font-medium mb-1 text-gray-300">X Position (0-7)</label>
             <input
+              data-testid="x-input"
               type="number"
               min="0"
               max="7"
@@ -52,6 +53,7 @@ const PlaceCommand = () => {
           <div>
             <label className="block text-xs font-medium mb-1 text-gray-300">Y Position (0-7)</label>
             <input
+              data-testid="y-input"
               type="number"
               min="0"
               max="7"
@@ -67,6 +69,7 @@ const PlaceCommand = () => {
           <div>
             <label className="block text-xs font-medium mb-1 text-gray-300">Direction</label>
             <select
+              data-testid="direction-select"
               value={direction}
               onChange={(e) => setDirection(e.target.value as Direction)}
               className="w-full px-2 py-1 text-sm bg-gray-700 border border-gray-600 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -82,6 +85,7 @@ const PlaceCommand = () => {
           <div>
             <label className="block text-xs font-medium mb-1 text-gray-300">Color</label>
             <select
+              data-testid="color-select"
               value={color}
               onChange={(e) => setColor(e.target.value as PawnColor)}
               className="w-full px-2 py-1 text-sm bg-gray-700 border border-gray-600 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-400"

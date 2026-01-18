@@ -1,4 +1,4 @@
-import { PawnSimulator } from '../PawnSimulator';
+import { PawnSimulator } from '@/src/services/PawnSimulator';
 
 /**
  * Abstract base class for all commands in the PawnSimulator.

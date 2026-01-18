@@ -1,6 +1,6 @@
-import { Rotate } from '../../../types/pawn-simulator-types';
+import { Rotate } from '@/src/types';
 import { Command } from './AbstractCommand';
-import { PawnSimulator } from '../PawnSimulator';
+import { PawnSimulator } from '@/src/services/PawnSimulator';
 
 /**
  * Command to rotate the pawn either LEFT or RIGHT.

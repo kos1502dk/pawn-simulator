@@ -1,7 +1,6 @@
 import { Command } from './AbstractCommand';
-import { PawnSimulator } from '../PawnSimulator';
-import { type Direction, DIRECTION, PAWN_COLOR } from '../../../types/pawn-simulator-types';
-import { PawnColor } from '../../../types/pawn-simulator-types';
+import { PawnSimulator } from '@/src/services/PawnSimulator';
+import { type Direction, DIRECTION, PAWN_COLOR, type PawnColor } from '@/src/types';
 
 /**
  * Command to place the pawn at a specified position, direction, and color.

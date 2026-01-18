@@ -1,5 +1,5 @@
 import { Command } from './AbstractCommand';
-import { PawnSimulator } from '../PawnSimulator';
+import { PawnSimulator } from '@/src/services/PawnSimulator';
 
 /**
  * Command to move the pawn a specified number of steps.

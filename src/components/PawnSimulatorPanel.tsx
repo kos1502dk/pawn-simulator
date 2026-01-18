@@ -1,10 +1,10 @@
 'use client';
 
-import CommandListPanel from './CommandListPanel';
-import MoveCommand from './MoveCommand';
-import OutputPanel from './OutputPanel';
-import PlaceCommand from './PlaceCommand';
-import RotationCommand from './RotationCommand';
+import CommandListPanel from '@/src/components/CommandListPanel';
+import MoveCommand from '@/src/components/MoveCommand';
+import OutputPanel from '@/src/components/OutputPanel';
+import PlaceCommand from '@/src/components/PlaceCommand';
+import RotationCommand from '@/src/components/RotationCommand';
 
 const PawnSimulatorPanel = () => {
   return (

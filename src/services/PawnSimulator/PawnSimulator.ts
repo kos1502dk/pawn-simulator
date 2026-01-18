@@ -1,6 +1,6 @@
 import { Board } from './entities/Board';
 import { Pawn } from './entities/Pawn';
-import { DIRECTION, type Direction, type PawnColor, Rotate, rotateDirection } from '../../types/pawn-simulator-types';
+import { DIRECTION, type Direction, type PawnColor, Rotate, rotateDirection } from '@/src/types';
 
 /**
  * Simulates the behavior of a pawn on a board, allowing placement, movement, rotation, and reporting.

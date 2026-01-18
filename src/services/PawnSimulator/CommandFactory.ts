@@ -2,7 +2,7 @@ import { Command } from './commands/AbstractCommand';
 import { PlaceCommand } from './commands/PlaceCommand';
 import { MoveCommand } from './commands/MoveCommand';
 import { RotateCommand } from './commands/RotateCommand';
-import { COMMANDS, isValidCommand, isRotateCommand } from '../../types/pawn-simulator-types';
+import { COMMANDS, isValidCommand, isRotateCommand } from '@/src/types';
 
 /**
  * Factory class to create command instances based on action names and arguments.

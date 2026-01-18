@@ -1,26 +1,41 @@
-import logger from '@/src/utils/logger';
 import { Board } from './entities/Board';
 import { Pawn } from './entities/Pawn';
-import { DIRECTION, Direction, PawnColor, Rotate, rotateDirection } from '../../types/pawn-simulator-types';
+import { DIRECTION, type Direction, type PawnColor, Rotate, rotateDirection } from '../../types/pawn-simulator-types';
 
+/**
+ * Simulates the behavior of a pawn on a board, allowing placement, movement, rotation, and reporting.
+ *
+ * The PawnSimulator manages the state of the pawn and ensures all actions are valid within the board's constraints.
+ */
 export class PawnSimulator {
   private pawn: Pawn | null = null;
   private board: Board;
 
-  constructor() {
-    this.board = new Board(8);
+  constructor(boardSize: number = 8) {
+    this.board = new Board(boardSize);
   }
 
+  /**
+   * Places the pawn on the board at the specified position, direction, and color.
+   *
+   * @param x The x-coordinate on the board.
+   * @param y The y-coordinate on the board.
+   * @param direction The direction the pawn is facing.
+   * @param color The color of the pawn.
+   */
   public place(x: number, y: number, direction: Direction, color: PawnColor): void {
     if (!this.board.isValidPosition(x, y)) {
       throw new Error(`Invalid position (${x}, ${y}) on the board.`);
     }
 
     this.pawn = new Pawn(x, y, direction, color);
-
-    logger.debug(`Pawn placed at (${x}, ${y}) facing ${direction} with color ${color}`);
   }
 
+  /**
+   * Moves the pawn forward by the specified number of steps.
+   *
+   * @param steps The number of steps to move the pawn forward. Defaults to 1 if not provided.
+   */
   public move(steps: number = 1): void {
     if (!this.pawn) {
       throw new Error('Pawn is not placed on the board.');
@@ -50,10 +65,13 @@ export class PawnSimulator {
     }
 
     this.pawn.setPosition(newX, newY);
-
-    logger.debug(`Pawn moved to (${newX}, ${newY})`);
   }
 
+  /**
+   * Rotates the pawn in the specified direction (LEFT or RIGHT).
+   *
+   * @param rotate The direction to rotate the pawn (LEFT or RIGHT).
+   */
   rotate(rotate: Rotate): void {
     if (!this.pawn) {
       throw new Error('Pawn is not placed on the board.');
@@ -63,10 +81,13 @@ export class PawnSimulator {
     const newDirection = rotateDirection(currentDirection, rotate);
 
     this.pawn.setDirection(newDirection);
-
-    logger.debug(`Pawn rotated to face ${newDirection}`);
   }
 
+  /**
+   * Reports the current position, direction, and color of the pawn.
+   *
+   * @returns A string representing the pawn's state, or null if the pawn is not placed.
+   */
   report(): string | null {
     if (!this.pawn) return null;
     return `${this.pawn.toString()}`;
